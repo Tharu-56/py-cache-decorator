@@ -5,7 +5,7 @@ from typing import Callable
 def cache(func: Callable) -> Callable:
     cached_results = {}
 
-    def wrapper(*args):
+    def wrapper(*args: object) -> object:
         if args in cached_results:
             print("Getting from cache")
             return cached_results[args]
